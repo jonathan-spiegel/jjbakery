@@ -1,8 +1,37 @@
 body {
   font-family: 'Roboto', sans-serif;
-  margin: 0 100px;
+  margin: 0;
 }
 
-.helloWorld {
-  font-weight: bold;
+.header {
+  position: relative;
+  width: 100%;
+  height: 75px;
+  box-shadow: 0 0 2px 1px lightgrey;
+  background: grey;
+  display: flex;
+  align-items: center;
+
+  .logo-text {
+    margin: 0 100px 0 50px;
+    font-size: 50px;
+    font-family: 'Cookie', cursive;
+    user-select: none;
+    cursor: default;
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    cursor: pointer;
+
+    li {
+      &:not(:first-child) {
+        margin-left: 50px;
+      }
+    }
+  }
 }
