@@ -36,6 +36,10 @@ export default {
         test: /\.less$/,
         exclude: /node_modules/,
         loaders: ["style-loader", "css-loader", "less-loader"]
+      },
+      {
+        test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
+        loader: 'file-loader?name=[name].[ext]'
       }
     ]
   }
