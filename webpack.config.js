@@ -5,6 +5,8 @@ import StyleLintPlugin from 'stylelint-webpack-plugin';
 export default {
   devtool: 'source-map',
   mode: 'development',
+  target: 'web',
+  watch: true,
   entry: [
     'eventsource-polyfill', // necessary for hot reloading with IE
     'webpack-hot-middleware/client?reload=true', //note that it reloads the page if hot module reloading fails.
@@ -12,35 +14,33 @@ export default {
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
-  target: 'web',
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new StyleLintPlugin({
       failOnError: false,
       configFile: '.stylelintrc.js',
       files: '**/*.less',
-      syntax: 'less'
-    })
+      syntax: 'less',
+    }),
   ],
-  watch: true,
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loaders: ['babel-loader', 'eslint-loader']
+        use: ['babel-loader', 'eslint-loader'],
       },
       {
         test: /\.less$/,
         exclude: /node_modules/,
-        loaders: ["style-loader", "css-loader", "less-loader"]
+        use: ["style-loader", "css-loader", "less-loader"],
       },
       {
         test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
-        loader: 'file-loader?name=[name].[ext]'
-      }
-    ]
-  }
+        loader: 'file-loader?name=[name].[ext]',
+      },
+    ],
+  },
 };
