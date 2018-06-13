@@ -5,7 +5,7 @@ import classnames from 'classnames';
 export default class Header extends Component {
   render() {
     return (
-      <nav className="header" role="navigation">
+      <header className="header" role="navigation">
         <span className="logo-text">
           <Link className={classnames('link-styles', 'logo')} to="/">J&J Bakery</Link>
         </span>
@@ -22,7 +22,7 @@ export default class Header extends Component {
             </li>
           </ul>
         </div>
-      </nav>
+      </header>
     );
   }
 }

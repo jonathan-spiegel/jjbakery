@@ -1,0 +1,35 @@
+.footer-container {
+  height: 80px;
+  background: #ebebeb;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  .footer-inner-container {
+    display: flex;
+    justify-content: center;
+
+    .footer {
+      width: 1100px;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  .svg-icons {
+    padding: 22.5px 0;
+    height: 35px;
+    width: 35px;
+    fill: #bababa;
+    cursor: pointer;
+
+    &:hover {
+      fill: #757575;
+    }
+
+    &:not(:last-child) {
+      margin-right: 14px;
+    }
+  }
+}

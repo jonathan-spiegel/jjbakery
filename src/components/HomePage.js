@@ -1,12 +1,30 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import imageUrls from '../common/imageUrls';
 
 export default class HomePage extends Component {
-  handleTreatClick = (image) => {
-    image.name;
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      redirect: false,
+      imageName: '',
+    };
+  }
+
+  handleTreatClick(image) {
+    const imageName = image.name.replace(/ /g, '');
+    this.setState({
+      redirect: true,
+      imageName,
+    });
   }
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to={`/${this.state.imageName}`}/>;
+    }
+
     return (
       <ul className="homepage-image-list">
         {imageUrls.map((image, index) => {
