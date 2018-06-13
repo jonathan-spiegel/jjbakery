@@ -2,6 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
+import autoprefixer from 'autoprefixer';
 
 export default {
   devtool: 'source-map',
@@ -9,6 +10,7 @@ export default {
   target: 'web',
   watch: true,
   entry: [
+    'babel-polyfill',
     'eventsource-polyfill', // necessary for hot reloading with IE
     'webpack-hot-middleware/client?reload=true', //note that it reloads the page if hot module reloading fails.
     path.resolve(__dirname, 'src/index.js'),
@@ -39,7 +41,15 @@ export default {
       {
         test: /\.less$/,
         exclude: /node_modules/,
-        use: ["style-loader", "css-loader", "less-loader"],
+        use: ['style-loader', 'css-loader', {
+          loader: 'postcss-loader',
+          options: {
+            plugins: () => [autoprefixer({
+              'browsers': ['> 1%', 'last 2 versions'],
+            })],
+          },
+        },
+        'less-loader'],
       },
       {
         test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
