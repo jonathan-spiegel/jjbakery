@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 export default {
   devtool: 'source-map',
@@ -24,6 +25,9 @@ export default {
       files: '**/*.less',
       syntax: 'less',
     }),
+    new CopyWebpackPlugin([
+      { from: 'src/images', to:'images' },
+    ]),
   ],
   module: {
     rules: [

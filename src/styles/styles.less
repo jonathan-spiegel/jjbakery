@@ -1,15 +1,23 @@
+@import "./HomePage.less";
+
 body {
+  margin: 0;
+}
+
+#app {
   font-family: 'Roboto', sans-serif;
-  width: 60%;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.app-root {
+  width: 1100px;
 }
 
 .header {
   position: relative;
   padding-top: 50px;
   padding-bottom: 50px;
-  // box-shadow: 0 0 2px 1px lightgrey;
-  // background: #f1f1f1;
   display: flex;
   align-items: center;
 
@@ -21,7 +29,6 @@ body {
 
     &.logo {
       color: black;
-      // margin: 0 100px 0 50px;
       font-size: 50px;
       font-family: 'Cookie', cursive;
     }
@@ -33,6 +40,7 @@ body {
 
   .selected {
     color: black;
+    border-bottom: 1px solid black;
   }
 
   .nav-list {

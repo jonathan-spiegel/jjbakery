@@ -1,0 +1,50 @@
+.homepage-image-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .list-item {
+    margin-bottom: 25px;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+      .image-hover-overlay {
+        opacity: 0.8;
+      }
+
+      .image-name {
+        opacity: 1;
+      }
+    }
+  }
+
+  .list-item-image {
+    height: 500px;
+    width: 350px;
+    opacity: 1;
+    display: block;
+    transition: 0.5s ease;
+    backface-visibility: hidden;
+  }
+
+  .image-hover-overlay {
+    transition: 0.5s ease;
+    opacity: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image-name {
+    color: white;
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+}
