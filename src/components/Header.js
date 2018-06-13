@@ -1,20 +1,28 @@
 import React, { Component } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import classnames from 'classnames';
 
 export default class Header extends Component {
-  handleItemClick = (event) => {
-    alert(event.currentTarget.innerText);
-  }
-
   render() {
     return (
-      <div className="header">
-        <span className="logo-text">J&J Bakery</span>
-        <ul>
-          <li onClick={this.handleItemClick}>Treats</li>
-          <li onClick={this.handleItemClick}>About Us</li>
-          <li onClick={this.handleItemClick}>Contact Us</li>
-        </ul>
-      </div>
+      <nav className="header" role="navigation">
+        <span className="logo-text">
+          <Link className={classnames('link-styles', 'logo')} to="/">J&J Bakery</Link>
+        </span>
+        <div className="nav-list">
+          <ul>
+            <li>
+              <NavLink className="link-styles" activeClassName="selected" exact to="/">TREATS</NavLink>
+            </li>
+            <li>
+              <NavLink className="link-styles" activeClassName="selected" to="/about">ABOUT US</NavLink>
+            </li>
+            <li>
+              <NavLink className="link-styles" activeClassName="selected" to="/contact">CONTACT US</NavLink>
+            </li>
+          </ul>
+        </div>
+      </nav>
     );
   }
 }
