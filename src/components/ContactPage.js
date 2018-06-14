@@ -25,16 +25,9 @@ export default class ContactPage extends Component {
     return false;
   }
 
-  isDisabled() {
-    const { name, emailSubject, emailBody } = this.state;
-    if (name.length === 0  && emailSubject.length === 0 && emailBody.length === 0) {
-      return true;
-    }
-
-    return false;
-  }
-
   render() {
+    const { name, emailSubject, emailBody } = this.state;
+
     return (
       <Fragment>
         <div className="contact-header-parent-container">
@@ -77,7 +70,7 @@ export default class ContactPage extends Component {
             type="button"
             className="submit-button"
             onClick={this.handleSubmitClick}
-            disabled={this.isDisabled()}
+            disabled={name.length === 0 || emailSubject.length === 0 || emailBody.length === 0}
           >
             <div className="submit-button-text">Submit</div>
           </button>
