@@ -7,11 +7,9 @@ export default class App extends Component {
   render() {
     return (
       <Fragment>
-        <div className="app-root">
-          <Header/>
-          <Main/>
-          <Footer/>
-        </div>
+        <Header/>
+        <Main/>
+        <Footer/>
       </Fragment>
     );
   }

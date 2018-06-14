@@ -1,0 +1,45 @@
+.header {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  .link-styles {
+    text-decoration: none;
+    color: gray;
+    font-size: 20px;
+    user-select: none;
+
+    &.logo {
+      color: black;
+      font-size: 50px;
+      font-family: 'Cookie', cursive;
+    }
+
+    &:hover {
+      color: black;
+    }
+  }
+
+  .selected {
+    color: black;
+    border-bottom: 1px solid black;
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+
+    li {
+      &:not(:first-child) {
+        margin-left: 50px;
+      }
+    }
+  }
+}

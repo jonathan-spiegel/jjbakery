@@ -1,0 +1,78 @@
+.contact-header-parent-container {
+  display: flex;
+  justify-content: center;
+
+  .contact-header-container {
+    width: 80%;
+    display: flex;
+
+    .contact-header {
+      width: 100%;
+      font-weight: 500;
+    }
+  }
+}
+
+.contact-us-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  label {
+    width: 80%;
+  }
+
+  input[type=text],
+  textarea {
+    display: block;
+    width: 100%;
+    margin-top: 2px;
+    margin-bottom: 20px;
+    border: 2px solid;
+
+    &:focus {
+      outline: 0;
+      border: 2px solid #5e9ed6;
+    }
+  }
+
+  textarea {
+    height: 100px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .submit-button {
+    width: 100px;
+    background-color: #eff3f6;
+    background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
+    background-repeat: repeat-x;
+    background-position: -1px -1px;
+    background-size: 110% 110%;
+    border: 1px solid rgba(27, 31, 35, 0.2);
+    border-radius: 0.25em;
+    cursor: pointer;
+
+    .submit-button-text {
+      padding: 3px 10px;
+      color: #24292e;
+      font-size: 12px;
+      font-weight: 600;
+      user-select: none;
+    }
+
+    &:hover:enabled {
+      background-color: #e6ebf1;
+      background-image: linear-gradient(-180deg, #f0f3f6 0%, #e6ebf1 90%);
+      background-position: -0.5em;
+      border-color: rgba(27, 31, 35, 0.35);
+    }
+
+    &[disabled] {
+      cursor: default;
+
+      .submit-button-text {
+        color: gray;
+      }
+    }
+  }
+}

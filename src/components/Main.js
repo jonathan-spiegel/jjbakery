@@ -3,7 +3,9 @@ import Routes from './Routes';
 
 const Main = () => {
   return (
-    <Routes/>
+    <main className="app-root main-content">
+      <Routes/>
+    </main>
   );
 };
 
