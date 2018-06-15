@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 const emailAddress = 'jaqui.lux@gmail.com';
 
@@ -29,7 +29,7 @@ export default class ContactPage extends Component {
     const { name, emailSubject, emailBody } = this.state;
 
     return (
-      <Fragment>
+      <div className="contact-container">
         <div className="contact-header-parent-container">
           <div className="contact-header-container">
             <h1 className="contact-header">Contact Us</h1>
@@ -75,7 +75,7 @@ export default class ContactPage extends Component {
             <div className="submit-button-text">Submit</div>
           </button>
         </form>
-      </Fragment>
+      </div>
     );
   }
 }
